@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
 import "package:hexcolor/hexcolor.dart";
 
-class Intro extends StatelessWidget {
+class Intro extends StatefulWidget {
+  @override
+  _IntroState createState() => _IntroState();
+}
+
+class _IntroState extends State<Intro> {
+
+  void delay() async {
+    await Future.delayed(const Duration(seconds: 2));
+    Navigator.pushReplacementNamed(context, '/getstarted');
+  }
+
+  void initState()  {
+    delay();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

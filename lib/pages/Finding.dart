@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class GetStarted extends StatelessWidget {
+class Finding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,13 +11,14 @@ class GetStarted extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(0, 250, 0, 0),
             child: Column(
               children: <Widget>[
-                Text("MED ID",
+                Text("Hold Med ID near your phone",
                     style: TextStyle(
-                      fontSize: 64.0,
-                      color: Hexcolor("2690F0"),
+                      fontSize: 18.0,
+                      color: Hexcolor("#48003C73"),
                       fontFamily: "OpenSans",
+                      letterSpacing: 2,
                     )),
-                SizedBox(height: 200),
+                SizedBox(height: 300),
                 Center(
                   child: FlatButton(
                       shape: RoundedRectangleBorder(
@@ -30,31 +31,15 @@ class GetStarted extends StatelessWidget {
                       color: Colors.blue,
                       textColor: Colors.white,
                       onPressed: () {
-                        Navigator.pushNamed(context, "/findingscreen");
                       },
                       padding: EdgeInsets.fromLTRB(80, 20, 80, 20),
-                      child: Text("CONNECT MED ID",
+                      child: Text("Finding MED ID",
                           style: TextStyle(
                             fontSize: 18,
                             fontFamily: "OpenSans",
                             letterSpacing: 2,
                           ))),
                 ),
-                SizedBox(height: 10),
-                FlatButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                    side: BorderSide(color: Colors.transparent),
-                  ),
-                  onPressed: () {},
-                  padding: EdgeInsets.fromLTRB(80, 20, 80, 20),
-                  textColor: Colors.grey,
-                  child: Text("Or order a Med ID",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontFamily: "OpenSans",
-                          letterSpacing: 2)),
-                )
               ],
             ),
           ),
