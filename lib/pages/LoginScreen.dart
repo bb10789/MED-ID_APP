@@ -120,28 +120,25 @@ class _LoginScreenState extends State<LoginScreen> {
               borderRadius: BorderRadius.circular(30.0),
             ),
             color: Colors.white,
-            child: Text(
-                "LOGIN",
+            child: Text("LOGIN",
                 style: TextStyle(
                   color: Color(0xFF527DAA),
                   letterSpacing: 1.5,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                   fontFamily: "OpenSans",
-                )
-            )
-        ));
+                ))));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: AnnotatedRegion<SystemUiOverlayStyle>(
-          value: SystemUiOverlayStyle.light,
-          child: GestureDetector(
-            onTap: () =>FocusScope.of(context).unfocus(),
-            child: Stack(
-      children: <Widget>[
+      value: SystemUiOverlayStyle.light,
+      child: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Stack(
+          children: <Widget>[
             Container(
                 height: double.infinity,
                 width: double.infinity,
@@ -182,9 +179,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         _buildLoginBtn(),
                       ],
                     )))
-      ],
-    ),
-          ),
-        ));
+          ],
+        ),
+      ),
+    ));
   }
 }

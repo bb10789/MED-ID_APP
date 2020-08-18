@@ -22,3 +22,28 @@ final kBoxDecorationStyle = BoxDecoration(
     ),
   ],
 );
+
+final mOutlineInputStyle = OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      const Radius.circular(30.0),
+    ),
+    borderSide: BorderSide(
+      width: 0.0,
+      style: BorderStyle.none,
+    ));
+
+// Input Boxes for Customer info
+final mBoxDecorationStyle = BoxDecoration(
+    border: Border.all(
+        color: Colors.transparent),
+    borderRadius: BorderRadius.all(
+        Radius.circular(30)),
+    boxShadow: [
+      BoxShadow(
+        color:
+        Colors.grey.withOpacity(0.1),
+        spreadRadius: 1,
+        blurRadius: 1,
+        offset: Offset(0, 1),
+      )
+    ]);
