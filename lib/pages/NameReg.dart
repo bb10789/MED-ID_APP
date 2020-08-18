@@ -3,7 +3,7 @@ import 'package:hexcolor/hexcolor.dart';
 import "package:med_id/utilities/constants.dart";
 
 class NameReg extends StatelessWidget {
-  Widget _firstNameTextField() {
+  Widget _inputTextField(fieldName) {
     return TextFormField(
         keyboardType: TextInputType.text,
         style: TextStyle(
@@ -13,23 +13,7 @@ class NameReg extends StatelessWidget {
         decoration: InputDecoration(
             border: mOutlineInputStyle,
             contentPadding: EdgeInsets.only(left: 40, top: 20, bottom: 20),
-            hintText: "First Name",
-            hintStyle: TextStyle(fontSize: 18, color: Hexcolor("#38000000")),
-            fillColor: Colors.white,
-            filled: true));
-  }
-
-  Widget _lastNameTextField() {
-    return TextFormField(
-        keyboardType: TextInputType.text,
-        style: TextStyle(
-          color: Hexcolor("#000000"),
-          fontFamily: "OpenSans",
-        ),
-        decoration: InputDecoration(
-            border: mOutlineInputStyle,
-            contentPadding: EdgeInsets.only(left: 40, top: 20, bottom: 20),
-            hintText: "Last Name",
+            hintText: fieldName,
             hintStyle: TextStyle(fontSize: 18, color: Hexcolor("#38000000")),
             fillColor: Colors.white,
             filled: true));
@@ -40,9 +24,9 @@ class NameReg extends StatelessWidget {
       translation: Offset(0.0, 0.25),
       child: Column(
         children: [
-          _firstNameTextField(),
+          _inputTextField("First Name"),
           SizedBox(height: 25),
-          _lastNameTextField()
+          _inputTextField("Last Name"),
         ],
       ),
     );
@@ -62,12 +46,7 @@ class NameReg extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(30)),
               alignment: Alignment.center,
-              child: Text("NEXT",
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: "OpenSans",
-                      letterSpacing: 2,
-                      color: Colors.white)),
+              child: kText("NEXT"),
             )),
       ),
     );

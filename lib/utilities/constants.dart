@@ -11,6 +11,15 @@ final kLabelStyle = TextStyle(
   fontFamily: 'OpenSans',
 );
 
+Widget kText(String data,
+    {double fontSize = 15,
+    String fontFamily = "OpenSans",
+    Color color = Colors.white}) {
+  return Text(data,
+      style:
+          TextStyle(fontSize: fontSize, fontFamily: fontFamily, color: color));
+}
+
 final kBoxDecorationStyle = BoxDecoration(
   color: Color(0xFF6CA8F1),
   borderRadius: BorderRadius.circular(10.0),
@@ -34,14 +43,11 @@ final mOutlineInputStyle = OutlineInputBorder(
 
 // Input Boxes for Customer info
 final mBoxDecorationStyle = BoxDecoration(
-    border: Border.all(
-        color: Colors.transparent),
-    borderRadius: BorderRadius.all(
-        Radius.circular(30)),
+    border: Border.all(color: Colors.transparent),
+    borderRadius: BorderRadius.all(Radius.circular(30)),
     boxShadow: [
       BoxShadow(
-        color:
-        Colors.grey.withOpacity(0.1),
+        color: Colors.grey.withOpacity(0.1),
         spreadRadius: 1,
         blurRadius: 1,
         offset: Offset(0, 1),
