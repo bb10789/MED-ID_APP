@@ -65,6 +65,9 @@ fonts:
     - assets: fonts/OpenSans-Regular.ttf
     - assets: fonts/OpenSans-Bold.ttf
       style: bold
+  - family: Avenir
+    fonts:
+    - assets: fonts/AvenirLTsd-Medium.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
