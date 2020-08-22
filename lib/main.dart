@@ -4,15 +4,24 @@ import "package:med_id/pages/Intro.dart";
 import 'package:med_id/pages/LoginScreen.dart';
 import "package:med_id/pages/Finding.dart";
 import "package:med_id/pages/NameReg.dart";
-
+import "package:med_id/pages/EmailScreen.dart";
+import 'package:med_id/pages/VertScreen.dart';
 void main() =>
     runApp(MaterialApp(
-      initialRoute: "/nameRegscreen",
+      theme: ThemeData(
+        buttonTheme: ButtonThemeData(
+          minWidth: 313,
+          height: 50,
+        )
+      ),
+      initialRoute: "/",
       routes: {
           "/": (context) => Intro(),
-          "/getstarted": (context) => GetStarted(),
-        "/loginscreen": (context) => LoginScreen(),
-        "/findingscreen": (context) => Finding(),
-        "/nameRegscreen" : (context) => NameReg(),
+          "/getStarted": (context) => GetStarted(),
+        "/loginScreen": (context) => LoginScreen(),
+        "/findingScreen": (context) => Finding(),
+        "/nameRegScreen" : (context) => NameReg(),
+        "/emailScreen" : (context) => EmailScreen(),
+        "/vertScreen" : (context) => VertScreen(),
       }
     ));

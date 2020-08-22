@@ -3,10 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import "package:med_id/utilities/constants.dart";
 
-
-
-class NameReg extends StatelessWidget {
-
+class EmailScreen extends StatelessWidget {
   Widget _inputTF(fieldName) {
     return TextFormField(
       keyboardType: TextInputType.text,
@@ -26,6 +23,8 @@ class NameReg extends StatelessWidget {
     );
   }
 
+
+
   Widget _button(nameField, context) {
     return Align(
       alignment: Alignment.bottomCenter,
@@ -40,7 +39,7 @@ class NameReg extends StatelessWidget {
           color: Colors.blue,
           textColor: Colors.white,
           onPressed: () {
-            Navigator.pushNamed(context, "/emailScreen");
+            Navigator.pushNamed(context, "/vertScreen");
           },
           padding: EdgeInsets.fromLTRB(80, 15, 80, 15),
           child: Text(nameField,
@@ -52,35 +51,36 @@ class NameReg extends StatelessWidget {
     );
   }
 
-  Widget textFields() {
+  Widget _textFields() {
     return FractionalTranslation(
-      translation: Offset(0.0, 0.25),
-      child: Column(
-        children: <Widget>[
-          _inputTF("First Name"),
-          SizedBox(height: 26),
-          _inputTF("Last Name"),
-        ],
-      ),
-    );
+        translation: Offset(0.0, 0.25),
+        child: Column(
+          children: <Widget>[
+            _inputTF("Email"),
+            SizedBox(height: 50),
+            Container(
+                width: 220,
+                child: Column(children: <Widget>[
+                  instruct_Text("We use this to notify you"),
+                  instruct_Text("for any recent activity")
+                ]))
+          ],
+        ));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AnnotatedRegion<SystemUiOverlayStyle>(
-            value: SystemUiOverlayStyle.light,
-            child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
-              child: Container(
-                padding: EdgeInsets.all(26),
-                child: Stack(
-                  children: <Widget>[
-                    textFields(),
-                    _button("NEXT", context),
-                  ],
-                ),
-              ),
-            )));
+      body: GestureDetector(
+          child: Container(
+              padding: EdgeInsets.all(26),
+              child: Stack(
+                children: <Widget>[
+                  _textFields(),
+                  SizedBox(height: 50),
+                  _button("NEXT", context),
+                ],
+              ))),
+    );
   }
 }

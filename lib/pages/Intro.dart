@@ -10,7 +10,7 @@ class _IntroState extends State<Intro> {
 
   void delay() async {
     await Future.delayed(const Duration(seconds: 2));
-    //Navigator.pushReplacementNamed(context, '/getstarted');
+    Navigator.pushReplacementNamed(context, '/getStarted');
   }
 
   void initState()  {

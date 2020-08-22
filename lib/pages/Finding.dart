@@ -39,6 +39,7 @@ class Finding extends StatelessWidget {
                       color: Colors.blue,
                       textColor: Colors.white,
                       onPressed: () {
+                        Navigator.pushNamed(context, "/nameRegScreen");
                       },
                       padding: EdgeInsets.fromLTRB(80, 20, 80, 20),
                       child: Text("Finding MED ID",

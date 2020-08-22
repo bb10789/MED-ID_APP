@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class GetStarted extends StatelessWidget {
   @override
@@ -30,12 +31,12 @@ class GetStarted extends StatelessWidget {
                       color: Colors.blue,
                       textColor: Colors.white,
                       onPressed: () {
-                        Navigator.pushNamed(context, "/findingscreen");
+                        Navigator.pushNamed(context, "/findingScreen");
                       },
-                      padding: EdgeInsets.fromLTRB(80, 20, 80, 20),
+                      padding: EdgeInsets.fromLTRB(80, 15, 80, 15),
                       child: Text("CONNECT MED ID",
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 15,
                             fontFamily: "OpenSans",
                             letterSpacing: 2,
                           ))),
@@ -51,7 +52,7 @@ class GetStarted extends StatelessWidget {
                   textColor: Colors.grey,
                   child: Text("Or order a Med ID",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 15,
                           fontFamily: "OpenSans",
                           letterSpacing: 2)),
                 )

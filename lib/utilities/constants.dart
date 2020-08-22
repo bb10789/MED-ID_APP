@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 final kHintTextStyle = TextStyle(
   color: Colors.white54,
@@ -47,3 +48,26 @@ final mBoxDecorationStyle = BoxDecoration(
         offset: Offset(0, 1),
       )
     ]);
+
+Widget kText(String data,
+    {double fontSize = 15,
+      String fontFamily = "OpenSans",
+      Color color = Colors.white}) {
+  return Text(data,
+      style:
+      TextStyle(fontSize: fontSize, fontFamily: fontFamily, color: color, letterSpacing: 2),);
+}
+
+final mhintTextStyle = TextStyle(
+fontSize: 15, color: Hexcolor("#38000000"), letterSpacing: 2
+);
+
+Widget instruct_Text(String data,
+    {double fontSize = 15,
+      String fontFamily = "OpenSans",
+      Color color = Colors.white}) {
+  return Text(data,
+      style:
+      TextStyle(fontSize: fontSize, fontFamily: fontFamily, color: Hexcolor("#21000000"), letterSpacing: 2));
+}
+
