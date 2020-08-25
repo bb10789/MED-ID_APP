@@ -10,7 +10,7 @@ class _IntroState extends State<Intro> {
 
   void delay() async {
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.pushReplacementNamed(context, '/getStarted');
+    Navigator.pushReplacementNamed(context, '/getStartedScreen');
   }
 
   void initState()  {
@@ -21,13 +21,7 @@ class _IntroState extends State<Intro> {
     return Scaffold(
       backgroundColor: Hexcolor("2690F0"),
       body: Center(
-        child: Text("MED ID",
-        style: TextStyle(
-          fontSize: 64.0,
-          color: Colors.white,
-          fontFamily: "OpenSans",
-        )
-        )
+        child: Image.asset("assets/logo.png")
       )
     );
   }

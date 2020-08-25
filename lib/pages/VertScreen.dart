@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import "package:med_id/utilities/constants.dart";
+import "package:med_id/utilities/Interaction.dart";
 
 class VertScreen extends StatelessWidget {
   Widget _inputTF(fieldName) {
@@ -25,30 +26,6 @@ class VertScreen extends StatelessWidget {
 
 
 
-  Widget _button(nameField, context) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-            side: BorderSide(
-              color: Colors.blue,
-              width: 1,
-            ),
-          ),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-          },
-          padding: EdgeInsets.fromLTRB(80, 15, 80, 15),
-          child: Text(nameField,
-              style: TextStyle(
-                fontSize: 15,
-                fontFamily: "OpenSans",
-                letterSpacing: 2,
-              ))),
-    );
-  }
 
   Widget _textFields() {
     return FractionalTranslation(
@@ -60,8 +37,8 @@ class VertScreen extends StatelessWidget {
             Container(
                 width: 250,
                 child: Column(children: <Widget>[
-                  instruct_Text("Please verify your email with"),
-                  instruct_Text("the code we sent to you")
+                  instructText("Please verify your email with"),
+                  instructText("the code we sent to you")
                 ]))
           ],
         ));
@@ -69,14 +46,18 @@ class VertScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: backArrow(context ),
       body: GestureDetector(
           child: Container(
               padding: EdgeInsets.all(26),
               child: Stack(
                 children: <Widget>[
-                  _textFields(),
-                  SizedBox(height: 50),
-                  _button("NEXT", context),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 70),
+                    child: _textFields(),
+                  ),
+                  Align( alignment: Alignment.bottomCenter,
+                      child: navButton("NEXT", context, "")),
                 ],
               ))),
     );

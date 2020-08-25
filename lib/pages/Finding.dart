@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import "package:med_id/utilities/constants.dart";
 
 class Finding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0.0,
-          iconTheme: IconThemeData(
-            color: Colors.blue,
-          ),
-
-        ),
+        appBar: backArrow(context),
         body: Container(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
@@ -28,26 +21,7 @@ class Finding extends StatelessWidget {
                     )),
                 SizedBox(height: 300),
                 Center(
-                  child: FlatButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        side: BorderSide(
-                          color: Colors.blue,
-                          width: 1,
-                        ),
-                      ),
-                      color: Colors.blue,
-                      textColor: Colors.white,
-                      onPressed: () {
-                        Navigator.pushNamed(context, "/nameRegScreen");
-                      },
-                      padding: EdgeInsets.fromLTRB(80, 20, 80, 20),
-                      child: Text("Finding MED ID",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontFamily: "OpenSans",
-                            letterSpacing: 2,
-                          ))),
+                  child: navButton("FINDING MED ID...", context, "/nameRegScreen"),
                 ),
               ],
             ),

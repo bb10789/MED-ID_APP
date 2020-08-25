@@ -26,31 +26,30 @@ class NameReg extends StatelessWidget {
     );
   }
 
-  Widget _button(nameField, context) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-            side: BorderSide(
-              color: Colors.blue,
-              width: 1,
-            ),
-          ),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.pushNamed(context, "/emailScreen");
-          },
-          padding: EdgeInsets.fromLTRB(80, 15, 80, 15),
-          child: Text(nameField,
-              style: TextStyle(
-                fontSize: 15,
-                fontFamily: "OpenSans",
-                letterSpacing: 2,
-              ))),
-    );
-  }
+//  Widget _button(nameField) {
+//    return FlatButton(
+//        shape: RoundedRectangleBorder(
+//          borderRadius: BorderRadius.circular(30),
+//          side: BorderSide(
+//            color: Colors.blue,
+//            width: 1,
+//          ),
+//        ),
+//        color: Colors.blue,
+//        textColor: Colors.white,
+//        onPressed: () {
+//          //Navigator.pushNamed(context, "/emailScreen");
+//        },
+//        padding: EdgeInsets.fromLTRB(80, 15, 80, 15),
+//        child: Text(nameField,
+//            style: TextStyle(
+//              fontSize: 15,
+//              fontFamily: "OpenSans",
+//              letterSpacing: 2,
+//            )));
+//  }
+
+
 
   Widget textFields() {
     return FractionalTranslation(
@@ -68,6 +67,7 @@ class NameReg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: backArrow(context),
         body: AnnotatedRegion<SystemUiOverlayStyle>(
             value: SystemUiOverlayStyle.light,
             child: GestureDetector(
@@ -76,8 +76,12 @@ class NameReg extends StatelessWidget {
                 padding: EdgeInsets.all(26),
                 child: Stack(
                   children: <Widget>[
-                    textFields(),
-                    _button("NEXT", context),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 70),
+                      child: textFields(),
+                    ),
+                    Align(alignment: Alignment.bottomCenter,
+                        child:navButton("NEXT", context, "/emailScreen"),)
                   ],
                 ),
               ),

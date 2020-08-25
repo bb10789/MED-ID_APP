@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_id/pages/GetStarted.dart';
+import 'package:med_id/pages/InRange.dart';
 import "package:med_id/pages/Intro.dart";
 import 'package:med_id/pages/LoginScreen.dart';
 import "package:med_id/pages/Finding.dart";
@@ -17,11 +18,12 @@ void main() =>
       initialRoute: "/",
       routes: {
           "/": (context) => Intro(),
-          "/getStarted": (context) => GetStarted(),
+          "/getStartedScreen": (context) => GetStarted(),
         "/loginScreen": (context) => LoginScreen(),
         "/findingScreen": (context) => Finding(),
         "/nameRegScreen" : (context) => NameReg(),
         "/emailScreen" : (context) => EmailScreen(),
         "/vertScreen" : (context) => VertScreen(),
+        "/inRangeScreen" : (context) => InRange()
       }
     ));

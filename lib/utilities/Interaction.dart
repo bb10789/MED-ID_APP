@@ -16,7 +16,7 @@ Widget _button(nameField, context) {
         color: Colors.blue,
         textColor: Colors.white,
         onPressed: () {
-          Navigator.pushNamed(context, "/findingScreen");
+          Navigator.pushNamed(context, "/emailScreen");
         },
         padding: EdgeInsets.fromLTRB(80, 15, 80, 15),
         child: Text(nameField,

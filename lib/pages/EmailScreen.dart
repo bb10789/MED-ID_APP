@@ -25,32 +25,6 @@ class EmailScreen extends StatelessWidget {
 
 
 
-  Widget _button(nameField, context) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-            side: BorderSide(
-              color: Colors.blue,
-              width: 1,
-            ),
-          ),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.pushNamed(context, "/vertScreen");
-          },
-          padding: EdgeInsets.fromLTRB(80, 15, 80, 15),
-          child: Text(nameField,
-              style: TextStyle(
-                fontSize: 15,
-                fontFamily: "OpenSans",
-                letterSpacing: 2,
-              ))),
-    );
-  }
-
   Widget _textFields() {
     return FractionalTranslation(
         translation: Offset(0.0, 0.25),
@@ -61,8 +35,8 @@ class EmailScreen extends StatelessWidget {
             Container(
                 width: 220,
                 child: Column(children: <Widget>[
-                  instruct_Text("We use this to notify you"),
-                  instruct_Text("for any recent activity")
+                  instructText("We use this to notify you"),
+                  instructText("for any recent activity")
                 ]))
           ],
         ));
@@ -71,14 +45,18 @@ class EmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: backArrow(context),
       body: GestureDetector(
           child: Container(
               padding: EdgeInsets.all(26),
               child: Stack(
                 children: <Widget>[
-                  _textFields(),
-                  SizedBox(height: 50),
-                  _button("NEXT", context),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 70),
+                    child: _textFields(),
+                  ),
+                  Align(alignment: Alignment.bottomCenter,
+                      child: navButton("NEXT", context, "/vertScreen")),
                 ],
               ))),
     );

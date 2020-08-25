@@ -62,7 +62,7 @@ final mhintTextStyle = TextStyle(
 fontSize: 15, color: Hexcolor("#38000000"), letterSpacing: 2
 );
 
-Widget instruct_Text(String data,
+Widget instructText(String data,
     {double fontSize = 15,
       String fontFamily = "OpenSans",
       Color color = Colors.white}) {
@@ -71,3 +71,45 @@ Widget instruct_Text(String data,
       TextStyle(fontSize: fontSize, fontFamily: fontFamily, color: Hexcolor("#21000000"), letterSpacing: 2));
 }
 
+Widget navButton(String nameField, BuildContext context, String dest) {
+  return FlatButton(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+        side: BorderSide(
+          color: Colors.blue,
+          width: 1,
+        ),
+      ),
+      color: Colors.blue,
+      textColor: Colors.white,
+      onPressed: () {
+        Navigator.pushNamed(context, dest);
+      },
+      padding: EdgeInsets.fromLTRB(80, 15, 80, 15),
+      child: Text(nameField,
+          style: TextStyle(
+            fontSize: 15,
+            fontFamily: "OpenSans",
+            letterSpacing: 2,
+          )));
+}
+
+Widget backArrow(BuildContext context) {
+  return AppBar(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      elevation: 0.0,
+      iconTheme: IconThemeData(
+      color: Colors.blue,
+  )
+  );
+}
+
+Widget hamburgerBlue(BuildContext context) {
+  return AppBar(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      elevation: 0.0,
+      iconTheme: IconThemeData(
+        color: Hexcolor("BFDEFB"),
+      )
+  );
+}
