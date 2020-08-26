@@ -15,7 +15,7 @@ void main() =>
           height: 50,
         )
       ),
-      initialRoute: "/getStartedScreen",
+      initialRoute: "/",
       routes: {
           "/": (context) => Intro(),
           "/getStartedScreen": (context) => GetStarted(),
