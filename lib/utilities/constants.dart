@@ -55,7 +55,7 @@ Widget kText(String data,
       Color color = Colors.white}) {
   return Text(data,
       style:
-      TextStyle(fontSize: fontSize, fontFamily: fontFamily, color: color, letterSpacing: 2),);
+      TextStyle(fontSize: fontSize, fontFamily: fontFamily, color: color, letterSpacing: 2,  fontWeight: FontWeight.w700),);
 }
 
 final mhintTextStyle = TextStyle(
@@ -112,4 +112,13 @@ Widget hamburgerBlue(BuildContext context) {
         color: Hexcolor("BFDEFB"),
       )
   );
+}
+
+Widget blueCheck() {
+  return Container(
+      width: 55,
+      height: 55,
+      decoration: BoxDecoration(
+          color: Colors.blue, shape: BoxShape.circle),
+      child: Image.asset("assets/check.png"));
 }

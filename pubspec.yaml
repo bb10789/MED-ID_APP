@@ -59,6 +59,7 @@ flutter:
     - assets/logo.png
     - assets/logo_blue.png
     - assets/check.png
+    - assets/checkMark.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

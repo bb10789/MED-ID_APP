@@ -57,7 +57,7 @@ class VertScreen extends StatelessWidget {
                     child: _textFields(),
                   ),
                   Align( alignment: Alignment.bottomCenter,
-                      child: navButton("NEXT", context, "")),
+                      child: navButton("NEXT", context, "/inRangeScreen")),
                 ],
               ))),
     );
